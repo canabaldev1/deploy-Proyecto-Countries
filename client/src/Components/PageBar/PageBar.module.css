@@ -22,3 +22,14 @@
   background-color: var(--secondary-t);
   cursor: pointer;
 }
+
+.navButton {
+  margin: 4px;
+  width: 60px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--primary);
+  background-color: var(--primary-t);
+  cursor: pointer;
+  font-weight: 700;
+}

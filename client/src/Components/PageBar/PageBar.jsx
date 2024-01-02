@@ -14,20 +14,31 @@ function PageBar({ setPage, page }) {
     pages.push(i);
   }
 
-  const handleClick = (event) => {
-    event.preventDefaul;
+  const handleSelectPage = (event) => {
     const selectPage = Number(event.target.value);
     setPage(selectPage);
   };
 
+  const handleNextPage = (event) => {
+    setPage(page + 1);
+  };
+  const handlePrevPage = (event) => {
+    setPage(page - 1);
+  };
+
   return (
     <div className={styles.container}>
+      {page !== 1 && (
+        <button onClick={handlePrevPage} className={styles.navButton}>
+          Prev
+        </button>
+      )}
       {pages.map((p) => {
         return (
           <button
             key={`keypage${p}`}
             value={p}
-            onClick={handleClick}
+            onClick={handleSelectPage}
             className={
               p === page ? styles.selectedPage : styles.notSelectedPage
             }
@@ -36,6 +47,11 @@ function PageBar({ setPage, page }) {
           </button>
         );
       })}
+      {page !== totalPages && (
+        <button onClick={handleNextPage} className={styles.navButton}>
+          Next
+        </button>
+      )}
     </div>
   );
 }
