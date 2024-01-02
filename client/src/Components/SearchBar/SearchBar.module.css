@@ -1,0 +1,146 @@
+.container {
+  margin-top: 130px;
+  margin-bottom: 10px;
+  border: 3px var(--primary) solid;
+  background-color: var(--secondary-t);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 15px;
+  min-width: 300px;
+}
+
+.filterContainer {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  /* margin-top: 200px; */
+}
+
+.filterNoShow {
+  /* background-color: aqua; */
+  transform: translateY(-200%);
+  z-index: -1;
+  height: 0;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchName {
+  border-radius: 20px;
+  height: 30px;
+  margin: 5px 5px;
+  width: 200px;
+  padding: 0 10px;
+}
+
+.burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+  scale: 0.6;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+.field {
+  margin: 13px 5px 5px 5px;
+  padding: 10px;
+  border-radius: 15px;
+  height: 100%;
+  border: 2px solid var(--secondary);
+  max-height: 200px;
+  overflow: hidden;
+  width: 30dvw;
+  max-width: 200px;
+  min-width: 120px;
+}
+
+.fieldContent {
+  height: 100%; /* Esto asegura que el contenido se expanda al 100% del contenedor */
+  overflow-y: auto;
+}
+
+.fieldContent::-webkit-scrollbar {
+  width: 6px; /* Ancho de la barra de desplazamiento */
+}
+
+.fieldContent::-webkit-scrollbar-thumb {
+  background-color: var(--primary); /* Color del mango (thumb) */
+}
+
+.fieldContent::-webkit-scrollbar-track {
+  background-color: transparent; /* Color de la pista de la barra de desplazamiento */
+}
+
+@media screen and (max-width: 500px) {
+  .filterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .field {
+    min-width: 90%;
+    max-width: 90%;
+    width: 90%;
+  }
+}

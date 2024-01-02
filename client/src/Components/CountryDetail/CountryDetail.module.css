@@ -1,0 +1,64 @@
+.container {
+  margin-top: 130px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000;
+}
+.containerInfo {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  border: 1px solid #000;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.info {
+  max-width: 420px;
+}
+
+.image {
+  width: 400px;
+}
+
+.line {
+  font-weight: 700;
+  text-align: center;
+  font-size: larger;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.imgPair {
+  position: relative;
+  right: 0px;
+  top: 0;
+  animation: carousel 7s linear infinite;
+}
+
+.noCoatOfArms {
+  position: relative;
+  right: 0px;
+  top: 0;
+  animation: none;
+}
+
+@keyframes carousel {
+  0%,
+  45%,
+  100% {
+    transform: translateX(-100.1%);
+  }
+
+  50%,
+  95% {
+    transform: translateX(0.1%);
+  }
+}

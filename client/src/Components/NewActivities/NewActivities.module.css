@@ -1,0 +1,119 @@
+.container {
+  margin-top: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  min-width: 400px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 10px;
+  align-items: center;
+  min-width: 400px;
+  border: 3px var(--primary) solid;
+  background-color: var(--secondary-t);
+  border-radius: 15px;
+}
+
+.countryTag {
+  margin: 8px;
+  padding: 6px;
+  border: 1px red solid;
+  border-radius: 100px;
+}
+
+.countryTagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+  border: 1px red solid;
+  border-radius: 15px;
+  min-height: 50px;
+}
+
+.optionContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 800px;
+  width: 90%;
+  margin: 10px;
+}
+
+.countryLabels {
+  margin-top: 15px;
+}
+
+.countryLabels span {
+  font-size: small;
+  color: blue;
+}
+
+.notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Asegura que esté en la parte superior de otros elementos */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification button {
+  background: none;
+  border: white 1px solid;
+  border-radius: 15px;
+  padding: 0 10px;
+  color: inherit;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.notification p {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.button {
+  border: 3px solid var(--secondary);
+  align-self: center;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 50px 50px 50px 50px;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buttonDisabled {
+  border: 3px solid rgb(172, 38, 52);
+  align-self: center;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 50px 50px 50px 50px;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+.inputs {
+  border-radius: 20px;
+  height: 30px;
+  margin: 5px 5px;
+  width: auto;
+  padding: 0 10px;
+  background-color: white;
+  border: 2px solid var(--primary);
+}
