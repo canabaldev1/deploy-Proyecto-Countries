@@ -7,6 +7,9 @@ import Error404 from "./Views/Error404/Error404";
 import Detail from "./Views/Detail/Detail";
 import CreateActivities from "./Views/CreateActivities/CreateActivities";
 import DisplayActivities from "./Views/DisplayActivities/DisplayActivities";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:3001/";
 
 function App() {
   return (

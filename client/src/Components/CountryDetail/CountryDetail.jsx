@@ -5,7 +5,7 @@ import styles from "./CountryDetail.module.css";
 
 function CountryDetail() {
   const { id } = useParams();
-  const ENDPOINT = `http://localhost:3001/countries/`;
+  const ENDPOINT = `/countries/`;
 
   const [country, setCountry] = useState({});
   const [imghandler, setImghandler] = useState(styles.imgPair);

@@ -8,7 +8,7 @@ function Activities() {
 
   const fetchActivities = async () => {
     try {
-      const endPoint = "http://localhost:3001/activity";
+      const endPoint = "/activity";
       const { data } = await axios(endPoint);
       setActivities(data.activities);
     } catch (error) {
@@ -25,7 +25,7 @@ function Activities() {
     const id = Number(event.target.id);
 
     try {
-      const endPoint = "http://localhost:3001/activity";
+      const endPoint = "/activity";
       const { data } = await axios.delete(endPoint, { data: { id } });
       setActivities(data.activities);
     } catch (error) {

@@ -95,7 +95,7 @@ function NewActivities() {
     };
     // const response = await dispatch(addActivity(activityParams));
 
-    const endPoint = "http://localhost:3001/activity";
+    const endPoint = "/activity";
 
     try {
       const { data } = await axios.post(endPoint, activityParams);

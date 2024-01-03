@@ -7,7 +7,7 @@ export const FILTER = "FILTER";
 
 // funciones para el rerducer
 export const searchCountries = (name) => {
-  const endPoint = "http://localhost:3001/countries/?name=";
+  const endPoint = "/countries/?name=";
   const nameToSearch = name || "";
 
   return async (dispatch) => {

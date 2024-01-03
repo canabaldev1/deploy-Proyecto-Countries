@@ -3,6 +3,11 @@ import { EMPTY_COUNTRIES, SEARCH_COUNTRIES, FILTER } from "./actions";
 const initialState = {
   countries: [],
   countriesToShow: [],
+  filterData: {
+    order: "ascending",
+    continents: [],
+    activities: [],
+  },
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -48,7 +53,7 @@ const rootReducer = (state = initialState, action) => {
         filteredCountries = filteredCountries.sort().reverse();
       }
 
-      return { ...state, countriesToShow: filteredCountries };
+      return { ...state, countriesToShow: filteredCountries, filterData };
 
     default:
       return { ...state };
