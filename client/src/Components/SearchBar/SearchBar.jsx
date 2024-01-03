@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { filterCountries } from "../../Redux/actions.js";
 import axios from "axios";
 
-function SearchBar({ searchName, setSearchName }) {
+function SearchBar({ searchName, setSearchName, setPage }) {
   const dispatch = useDispatch();
 
   const [activities, setActivities] = useState([]);
@@ -34,6 +34,8 @@ function SearchBar({ searchName, setSearchName }) {
   const filterData = useSelector((state) => state.filterData);
 
   const handleFilter = (event) => {
+    setPage(1);
+
     var temporalFilters = { ...filterData };
 
     switch (event.target.name) {

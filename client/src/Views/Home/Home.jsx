@@ -11,7 +11,11 @@ function Home(params) {
   return (
     <div className={styles.container}>
       <NavBar />
-      <SearchBar searchName={searchName} setSearchName={setSearchName} />
+      <SearchBar
+        searchName={searchName}
+        setSearchName={setSearchName}
+        setPage={setPage}
+      />
       <PageBar setPage={setPage} page={page} />
       <Cards searchName={searchName} setPage={setPage} page={page} />
     </div>
