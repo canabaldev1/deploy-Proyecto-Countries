@@ -57,7 +57,7 @@
 @media screen and (max-width: 750px) {
   .container img {
     display: absolute;
-    width: 90%;
+    width: 100%;
   }
 
   .container {
@@ -67,6 +67,8 @@
     top: 0%;
     left: 50%;
     transform: translate(-50%, 0%);
+    padding: 10px;
+    width: 90%;
   }
 
   .button {
