@@ -110,7 +110,7 @@ function SearchBar({ searchName, setSearchName, setPage }) {
 
   const filterContainerShow = styles.filterContainer;
   const filterContainerNoShow = `${styles.filterContainer} ${styles.filterNoShow}`;
-  const [filterContainer, setFilterContainer] = useState(filterContainerShow);
+  const [filterContainer, setFilterContainer] = useState(filterContainerNoShow);
 
   const handleDisplayFiltetrs = (event) => {
     filterContainer === filterContainerShow
@@ -136,6 +136,7 @@ function SearchBar({ searchName, setSearchName, setPage }) {
           <span></span>
         </label>
       </div>
+
       <div className={filterContainer}>
         <fieldset key="fieldOrder" className={styles.field}>
           <legend>Order:</legend>
