@@ -35,22 +35,24 @@ function Activities() {
 
   return (
     <div className={styles.container}>
-      {activities.length
-        ? activities.map((act) => {
-            return (
-              <ActivityCard
-                key={`act${act.id}`}
-                id={act.id}
-                name={act.name}
-                difficulty={act.difficulty}
-                season={act.season}
-                duration={act.duration}
-                Countries={act.Countries}
-                handleDelete={handleDelete}
-              />
-            );
-          })
-        : "No activities yet"}
+      {activities.length ? (
+        activities.map((act) => {
+          return (
+            <ActivityCard
+              key={`act${act.id}`}
+              id={act.id}
+              name={act.name}
+              difficulty={act.difficulty}
+              season={act.season}
+              duration={act.duration}
+              Countries={act.Countries}
+              handleDelete={handleDelete}
+            />
+          );
+        })
+      ) : (
+        <h1>No activities yet</h1>
+      )}
     </div>
   );
 }

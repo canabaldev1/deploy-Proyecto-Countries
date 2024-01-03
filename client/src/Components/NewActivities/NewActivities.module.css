@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 95%;
   padding: 0;
-  min-width: 400px;
+  min-width: 300px;
 }
 .form {
   display: flex;
