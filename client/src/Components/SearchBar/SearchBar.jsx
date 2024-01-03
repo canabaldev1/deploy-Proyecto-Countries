@@ -24,13 +24,6 @@ function SearchBar({ searchName, setSearchName, setPage }) {
     "Europe",
   ];
 
-  // const [filterData, setFilterData] = useState({
-  //   order: "ascending",
-  //   continents: [],
-  //   activities: [],
-  //   population: { min: 0, max: 0 },
-  // });
-
   const filterData = useSelector((state) => state.filterData);
 
   const handleFilter = (event) => {
@@ -86,9 +79,6 @@ function SearchBar({ searchName, setSearchName, setPage }) {
         break;
     }
 
-    // setFilterData(temporalFilters);
-
-    // dispatch(setFilters(temporalFilters));
     dispatch(filterCountries(temporalFilters));
   };
 
@@ -193,6 +183,7 @@ function SearchBar({ searchName, setSearchName, setPage }) {
           <legend>Activities:</legend>
           <div className={styles.fieldContent}>
             {activities.map((a) => {
+              console.log(filterData.activities.includes(a.name));
               return (
                 <div key={`div${a.id}`}>
                   <input
@@ -202,7 +193,7 @@ function SearchBar({ searchName, setSearchName, setPage }) {
                     name="activities"
                     value={a.name}
                     onChange={handleFilter}
-                    checked={filterData.activities.includes(a)}
+                    checked={filterData.activities.includes(a.name)}
                   />
                   <label htmlFor={a.id}>{a.name}</label>
                 </div>

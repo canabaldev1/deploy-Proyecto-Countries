@@ -66,12 +66,13 @@
   .navList {
     position: absolute;
     top: 100%;
-    right: -50%;
+    left: 100%;
     background-color: var(--primary);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     flex-direction: column;
     transition: all 0.3s ease-in-out;
+    width: max-content;
   }
 
   .navList li {
@@ -86,7 +87,12 @@
     padding: 10px;
   }
 
+  .link:hover {
+    color: var(--secondary);
+    border-bottom: 2px solid var(--secondary);
+  }
+
   .menuOpen {
-    left: 50%;
+    transform: translate(-100%);
   }
 }

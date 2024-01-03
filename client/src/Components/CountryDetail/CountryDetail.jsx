@@ -8,7 +8,6 @@ function CountryDetail() {
   const ENDPOINT = `/countries/`;
 
   const [country, setCountry] = useState({});
-  const [imghandler, setImghandler] = useState(styles.imgPair);
 
   useEffect(() => {
     const fetchCountry = async () => {
@@ -94,9 +93,9 @@ function CountryDetail() {
             )}
           </div>
 
-          <div className={styles.imgContainer}>
-            {country.coatOfArms ? (
-              <div className={styles.imgPair}>
+          {country.coatOfArms ? (
+            <div className={styles.imgContainer}>
+              <div className={`${styles.containerFlag} ${styles.carousel}`}>
                 <img
                   className={styles.image}
                   src={country.flag}
@@ -104,32 +103,30 @@ function CountryDetail() {
                 />
                 <p className={styles.line}>Flag</p>
               </div>
-            ) : (
-              <div className={styles.noCoatOfArms}>
-                <img
-                  className={styles.image}
-                  src={country.flag}
-                  alt={`flag of ${country.name}`}
-                />
-                <p className={styles.line}>Flag</p>
-              </div>
-            )}
-            {country.coatOfArms ? (
-              <div className={imghandler}>
+              <div className={`${styles.containerCoat} ${styles.carousel}`}>
                 <img
                   className={styles.image}
                   src={country.coatOfArms}
-                  alt={`coat of arms of ${country.name}`}
+                  alt={`flag of ${country.name}`}
                 />
-                <p className={styles.line}>Coat of Arms</p>
+                <p className={styles.line}>Coat Of Arms</p>
               </div>
-            ) : (
-              ""
-            )}
-          </div>
+            </div>
+          ) : (
+            <div className={styles.imgContainer}>
+              <div className={styles.containerFlag}>
+                <img
+                  className={styles.image}
+                  src={country.flag}
+                  alt={`flag of ${country.name}`}
+                />
+                <p className={styles.line}>Flag</p>
+              </div>
+            </div>
+          )}
         </div>
       ) : (
-        "Cargando..."
+        <h1>Cargando...</h1>
       )}
     </div>
   );

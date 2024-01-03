@@ -2,25 +2,34 @@
   margin-top: 130px;
   width: 100%;
   padding: 10px;
-  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid #000; */
 }
+
 .containerInfo {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   display: flex;
-  border: 1px solid #000;
+  border: 1px solid var(--primary);
+  border-radius: 20px;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .info {
+  min-width: 200px;
   max-width: 420px;
+  width: 90%;
 }
 
-.image {
-  width: 400px;
-}
+/* .image {
+  min-width: 200px;
+
+  max-width: 400px;
+  width: 90%;
+} */
 
 .line {
   font-weight: 700;
@@ -30,35 +39,75 @@
 
 .imgContainer {
   display: flex;
-  align-items: center;
-  width: 400px;
+  width: 360px;
   overflow: hidden;
-  position: relative;
+  align-items: center;
 }
 
-.imgPair {
-  position: relative;
-  right: 0px;
-  top: 0;
-  animation: carousel 7s linear infinite;
+.containerFlag,
+.containerCoat {
+  width: 360px;
+  height: 100%;
+  object-fit: cover;
 }
 
-.noCoatOfArms {
-  position: relative;
-  right: 0px;
-  top: 0;
-  animation: none;
+.carousel {
+  animation: carousel 5s linear infinite;
+}
+
+.image {
+  width: 360px;
+  height: 100%;
 }
 
 @keyframes carousel {
   0%,
   45%,
   100% {
-    transform: translateX(-100.1%);
+    transform: translateX(0.01%);
   }
 
   50%,
   95% {
-    transform: translateX(0.1%);
+    transform: translateX(-100.01%);
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .imgContainer {
+    width: 300px;
+  }
+
+  .containerFlag,
+  .containerCoat {
+    width: 300px;
+  }
+
+  .image {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 5px;
+  }
+
+  .containerInfo {
+    width: 95%;
+    padding: 5px;
+  }
+
+  .imgContainer {
+    width: 220px;
+  }
+
+  .containerFlag,
+  .containerCoat {
+    width: 220px;
+  }
+
+  .image {
+    width: 220px;
   }
 }
