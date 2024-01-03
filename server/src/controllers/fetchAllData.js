@@ -1,6 +1,5 @@
 const axios = require("axios");
 const { API_URL } = process.env;
-console.log(API_URL);
 const { Country, CountryName } = require("../db");
 
 const fetchAllData = async () => {
