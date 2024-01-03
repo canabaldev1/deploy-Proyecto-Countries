@@ -28,7 +28,7 @@ function PageBar({ setPage, page }) {
 
   return (
     <div className={styles.container}>
-      {page !== 1 && (
+      {totalPages > 1 && page !== 1 && (
         <button onClick={handlePrevPage} className={styles.navButton}>
           Prev
         </button>
@@ -47,7 +47,7 @@ function PageBar({ setPage, page }) {
           </button>
         );
       })}
-      {page !== totalPages && (
+      {totalPages > 1 && page !== totalPages && (
         <button onClick={handleNextPage} className={styles.navButton}>
           Next
         </button>
