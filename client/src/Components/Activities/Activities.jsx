@@ -2,35 +2,38 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./Activities.module.css";
 import ActivityCard from "../ActivityCard/ActivityCard";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchActivities, deleteActivity } from "../../Redux/actions";
 
 function Activities() {
-  const [activities, setActivities] = useState([]);
+  // const [activities, setActivities] = useState([]);
 
-  const fetchActivities = async () => {
-    try {
-      const endPoint = "/activity";
-      const { data } = await axios(endPoint);
-      setActivities(data.activities);
-    } catch (error) {
-      window.alert(error.message);
-    }
-  };
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchActivities();
-  }, []);
+    dispatch(fetchActivities());
+  });
+
+  const activities = useSelector((state) => state.activities);
+
+  // const fetchActivities = async () => {
+  //   try {
+  //     const endPoint = "/activity";
+  //     const { data } = await axios(endPoint);
+  //     setActivities(data.activities);
+  //   } catch (error) {
+  //     window.alert(error.message);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchActivities();
+  // }, []);
 
   const handleDelete = async (event) => {
     event.preventDefault();
     const id = Number(event.target.id);
-
-    try {
-      const endPoint = "/activity";
-      const { data } = await axios.delete(endPoint, { data: { id } });
-      setActivities(data.activities);
-    } catch (error) {
-      window.alert(error.message);
-    }
+    dispatch(deleteActivity(id));
   };
 
   return (

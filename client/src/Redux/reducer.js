@@ -1,4 +1,10 @@
-import { EMPTY_COUNTRIES, SEARCH_COUNTRIES, FILTER } from "./actions";
+import {
+  EMPTY_COUNTRIES,
+  SEARCH_COUNTRIES,
+  FILTER,
+  FETCH_ACTIVITIES,
+  DELETE_ACTIVITY,
+} from "./actions";
 
 const initialState = {
   countries: [],
@@ -8,6 +14,7 @@ const initialState = {
     continents: [],
     activities: [],
   },
+  activities: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -54,6 +61,18 @@ const rootReducer = (state = initialState, action) => {
       }
 
       return { ...state, countriesToShow: filteredCountries, filterData };
+
+    case FETCH_ACTIVITIES:
+      return {
+        ...state,
+        activities: action.payload,
+      };
+
+    case DELETE_ACTIVITY:
+      return {
+        ...state,
+        activities: action.payload,
+      };
 
     default:
       return { ...state };

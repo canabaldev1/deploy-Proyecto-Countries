@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import styles from "./SearchBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { filterCountries } from "../../Redux/actions.js";
+import { fetchActivities } from "../../Redux/actions.js";
 import axios from "axios";
 
 function SearchBar({ searchName, setSearchName, setPage }) {
   const dispatch = useDispatch();
 
-  const [activities, setActivities] = useState([]);
+  // const [activities, setActivities] = useState([]);
+  const activities = useSelector((state) => state.activities);
 
   const handleSearchName = (event) => {
     const name = event.target.value;
@@ -84,18 +86,18 @@ function SearchBar({ searchName, setSearchName, setPage }) {
 
   useEffect(() => {
     dispatch(filterCountries(filterData));
-  });
+  }, []);
 
   // const activities = ["actividad 1", "actividad 2", "actividad 3"];
 
-  const fetchActivities = async () => {
-    const endPoint = "/activity";
-    const { data } = await axios(endPoint);
-    setActivities(data.activities);
-  };
+  // const fetchActivities = async () => {
+  //   const endPoint = "/activity";
+  //   const { data } = await axios(endPoint);
+  //   setActivities(data.activities);
+  // };
 
   useEffect(() => {
-    fetchActivities();
+    dispatch(fetchActivities());
   }, []);
 
   const filterContainerShow = styles.filterContainer;
