@@ -20,8 +20,8 @@ function validate(
   }
 
   // Validación para la duración
-  duration = parseInt(duration, 10);
-  if (isNaN(duration) || duration <= 0) {
+  duration = Number(duration);
+  if (isNaN(duration) || duration <= 0 || !Number.isInteger(duration)) {
     error.duration = "Duration should be a positive integer.";
   }
 
@@ -35,7 +35,7 @@ function validate(
   if (!countries.length) {
     error.countries = "Include at least one country";
   }
-
+  console.log(error);
   setActivityError(error);
 
   return error;

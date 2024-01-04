@@ -183,7 +183,6 @@ function SearchBar({ searchName, setSearchName, setPage }) {
           <legend>Activities:</legend>
           <div className={styles.fieldContent}>
             {activities.map((a) => {
-              console.log(filterData.activities.includes(a.name));
               return (
                 <div key={`div${a.id}`}>
                   <input
